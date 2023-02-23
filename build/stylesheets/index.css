@@ -1,3 +1,19 @@
+@keyframes appearX {
+  from {
+    transform: rotateX(90deg);
+  }
+  to {
+    transform: rotateX(0deg);
+  }
+}
+@keyframes appearY {
+  from {
+    transform: rotateY(90deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
 body {
   font-family: "Hanken Grotesk", sans-serif;
   font-size: 18px;
@@ -8,7 +24,7 @@ header {
   width: 100%;
   background-image: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
   border-radius: 0 0 30px 30px;
-  padding: 22px 50px 40px 50px;
+  padding: 24px 55px 40px 55px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,7 +44,8 @@ header #score {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 9px;
+  margin-top: 10px;
+  animation: appearY 0.5s forwards linear;
 }
 header #score h1 {
   color: hsl(0, 0%, 100%);
@@ -46,7 +63,7 @@ header h2 {
   color: hsl(0, 0%, 100%);
   font-weight: 700;
   font-size: 24px;
-  transform: translateY(8px);
+  transform: translateY(10px);
 }
 header p {
   font-size: 15.9px;
@@ -54,21 +71,22 @@ header p {
   color: hsla(241, 100%, 89%, 0.9);
   font-weight: 700;
   line-height: 21px;
+  transform: translateY(3px);
 }
 
 main {
-  padding: 20px 30px;
+  padding: 25px 30px;
 }
 main #summary-title {
   color: hsl(224, 30%, 27%);
   font-weight: 700;
   font-size: 18px;
-  margin-bottom: 21px;
+  margin-bottom: 23px;
 }
 main #summary {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 16px;
 }
 main #summary .summaryItem {
   display: flex;
@@ -76,9 +94,26 @@ main #summary .summaryItem {
   align-items: center;
   height: 56px;
   padding: 0 16px 0 17px;
+  border-radius: 12px;
+  animation: appearX 0.5s forwards linear;
 }
-main #summary .summaryItem div {
+main #summary .summaryItem .itemTitle {
   display: flex;
+  gap: 11px;
+}
+main #summary .summaryItem .itemTitle span {
+  font-size: 15.6px;
+  font-weight: 700;
+}
+main #summary .summaryItem .score {
+  display: flex;
+  font-size: 15.6px;
+  font-weight: 700;
+  gap: 7px;
+  color: hsla(224, 30%, 27%, 0.5);
+}
+main #summary .summaryItem .score span:first-child {
+  color: hsl(224, 30%, 27%);
 }
 main #summary .summaryItem #reaction {
   color: hsl(0, 100%, 67%);
@@ -93,16 +128,123 @@ main #summary .summaryItem #visual {
   color: hsl(234, 85%, 45%);
 }
 main #summary #reaction-container {
-  background-color: hsla(0, 100%, 67%, 0.05);
+  background-color: hsla(0, 100%, 67%, 0.07);
 }
 main #summary #memory-container {
-  background-color: hsla(39, 100%, 56%, 0.05);
+  background-color: hsla(39, 100%, 56%, 0.07);
 }
 main #summary #verbal-container {
-  background-color: hsla(166, 100%, 37%, 0.05);
+  background-color: hsla(166, 100%, 37%, 0.07);
 }
 main #summary #visual-container {
-  background-color: hsla(234, 85%, 45%, 0.05);
+  background-color: hsla(234, 85%, 45%, 0.07);
+}
+main button {
+  width: 100%;
+  margin-top: 23px;
+  height: 56px;
+  border-radius: 30px;
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+  background-color: hsl(224, 30%, 27%) !important;
+}
+
+footer {
+  font-size: 11px;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: hsl(224, 30%, 27%);
+  color: hsl(0, 0%, 100%);
+}
+footer a {
+  font-weight: 800;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+  body #container {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 218px);
+    display: flex;
+    width: 737px;
+    height: 512px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+  }
+  body #container header {
+    height: 100%;
+    width: 368px;
+    border-radius: 30px;
+    padding-top: 36px;
+  }
+  body #container header #top-span {
+    font-size: 24px;
+  }
+  body #container header #score {
+    height: 200px;
+    width: 200px;
+    margin-top: -14px;
+  }
+  body #container header #score h1 {
+    font-size: 72px;
+    transform: translateY(3px);
+  }
+  body #container header #score span {
+    font-size: 18.6px;
+    transform: translateY(-10px);
+  }
+  body #container header h2 {
+    font-size: 32px;
+    transform: translateY(-12px);
+  }
+  body #container header p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21px;
+    transform: translateY(-16px);
+  }
+  body #container main {
+    padding: 35px 40px;
+  }
+  body #container main #summary-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+  body #container main #summary {
+    gap: 16px;
+  }
+  body #container main #summary .summaryItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 56px;
+    width: 288px;
+    padding: 0 16px 0 17px;
+    border-radius: 12px;
+  }
+  body #container main #summary .summaryItem .itemTitle span {
+    font-size: 18px;
+  }
+  body #container main #summary .summaryItem .score {
+    font-size: 18px;
+    gap: 5px;
+  }
+  body #container main #summary .summaryItem .score span:first-child {
+    transform: translateX(-4px);
+  }
+  body #container main button {
+    margin-top: 42px;
+  }
+  body #container main button:hover {
+    background-image: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

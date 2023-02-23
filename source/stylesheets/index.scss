@@ -9,10 +9,10 @@ $cobaltBlue: hsl(234, 85%, 45%);
 
 // with transparency
 
-$lightRedTransparent: hsl(0, 100%, 67%, 0.05);
-$orangeyYellowTransparent: hsl(39, 100%, 56%, 0.05);
-$greenTealTransparent: hsl(166, 100%, 37%, 0.05);
-$cobaltBlueTransparent: hsl(234, 85%, 45%, 0.05);
+$lightRedTransparent: hsl(0, 100%, 67%, 0.07);
+$orangeyYellowTransparent: hsl(39, 100%, 56%, 0.07);
+$greenTealTransparent: hsl(166, 100%, 37%, 0.07);
+$cobaltBlueTransparent: hsl(234, 85%, 45%, 0.07);
 
 // Gradients
 
@@ -32,6 +32,7 @@ $darkGrayBlue: hsl(224, 30%, 27%);
 // with transparency
 $lightLavenderTransparent: hsla(241, 100%, 89%, 0.9);
 $lightLavenderExtraTransparent: hsla(241, 100%, 89%, 0.5);
+$darkGrayBlueTransparent: hsla(224, 30%, 27%, 0.5);
 
 // Font
 
@@ -39,6 +40,16 @@ $hankenGrotesk: 'Hanken Grotesk', sans-serif;
 $medium: 500;
 $bold: 700;
 $extraBold: 800;
+
+@keyframes appearX{
+    from{ transform: rotateX(90deg); }
+    to{ transform: rotateX(0deg); }
+}
+
+@keyframes appearY{
+    from{ transform: rotateY(90deg); }
+    to{ transform: rotateY(0deg); }
+}
 
 
 body{
@@ -51,7 +62,7 @@ header{
     width: 100%;
     background-image: linear-gradient(to bottom, $lightSlateBlue, $lightRoyalBlue);
     border-radius: 0 0 30px 30px;
-    padding: 22px 50px 40px 50px;
+    padding: 24px 55px 40px 55px;
     
     display: flex;
     flex-direction: column;
@@ -74,7 +85,9 @@ header{
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-top: 9px;
+        margin-top: 10px;
+
+        animation: appearY 0.5s forwards linear;
 
         h1{
             color: $white;
@@ -95,7 +108,7 @@ header{
         color: $white;
         font-weight: $bold;
         font-size: 24px;
-        transform: translateY(8px);
+        transform: translateY(10px);
     }
 
     p{
@@ -104,23 +117,24 @@ header{
         color: $lightLavenderTransparent;
         font-weight: $bold;
         line-height: 21px;
+        transform: translateY(3px);
     }
 }
 
 main{
-    padding: 20px 30px;
+    padding: 25px 30px;
 
     #summary-title{
         color: $darkGrayBlue;
         font-weight: $bold;
         font-size: 18px;
-        margin-bottom: 21px;
+        margin-bottom: 23px;
     }
 
     #summary{
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 16px;
 
         .summaryItem{
             display: flex;
@@ -128,9 +142,29 @@ main{
             align-items: center;
             height: 56px;
             padding: 0 16px 0 17px;
+            border-radius: 12px;
+            animation: appearX 0.5s forwards linear;
     
-            div{
+            .itemTitle{
                 display: flex;
+                gap: 11px;
+
+                span{
+                    font-size: 15.6px;
+                    font-weight: $bold;
+                }
+            }
+
+            .score{
+                display: flex;
+                font-size: 15.6px;
+                font-weight: $bold;
+                gap: 7px;
+                color: $darkGrayBlueTransparent;
+
+                span:first-child{
+                    color: $darkGrayBlue;
+                }
             }
     
             #reaction{
@@ -167,4 +201,136 @@ main{
         }
     }
     
+    button{
+        width: 100%;
+        margin-top: 23px;
+        height: 56px;
+        border-radius: 30px;
+        color: $white;
+        font-weight: $bold;
+        background-color: $darkGrayBlue !important;
+    }
+}
+
+footer{ 
+    font-size: 11px; 
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: $darkGrayBlue;
+    color: $white;
+
+    a{
+        font-weight: $extraBold;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    body{
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+
+        #container{
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 218px);
+
+            display: flex;
+            width: 737px;
+            height: 512px;
+
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            border-radius: 30px;
+
+            header{
+                height: 100%;
+                width: 368px;
+                border-radius: 30px;
+                padding-top: 36px;
+
+                #top-span{
+                    font-size: 24px;
+                }
+
+                #score{
+                    height: 200px;
+                    width: 200px;
+            
+                    margin-top: -14px;
+            
+                    h1{
+                        font-size: 72px;
+                        transform: translateY(3px);
+                    }
+            
+                    span{
+                        font-size: 18.6px;
+                        transform: translateY(-10px);
+                    }
+                }
+
+                h2{
+                    font-size: 32px;
+                    transform: translateY(-12px);
+                }
+            
+                p{
+                    font-size: 18px;
+                    font-weight: $medium;
+                    line-height: 21px;
+                    transform: translateY(-16px);
+                }
+            }
+
+            main{
+                padding: 35px 40px;
+
+                #summary-title{
+                    font-size: 24px;
+                    margin-bottom: 25px;
+                }
+
+                #summary{
+                    gap: 16px;
+
+                    .summaryItem{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        height: 56px;
+                        width: 288px;
+                        padding: 0 16px 0 17px;
+                        border-radius: 12px;
+                
+                        .itemTitle{
+                            span{
+                                font-size: 18px;
+                            }
+                        }
+
+                        .score{
+                            font-size: 18px;
+                            gap: 5px;
+
+                            span:first-child{
+                                transform: translateX(-4px);
+                            }
+                        }
+                    }
+                }
+                
+                button{
+                    margin-top: 42px;
+
+                    &:hover{
+                        background-image: linear-gradient(to bottom, $lightSlateBlue, $lightRoyalBlue);
+                    }
+                }
+            }
+        }
+    }
+
+
 }

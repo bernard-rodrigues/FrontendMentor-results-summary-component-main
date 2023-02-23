@@ -7,7 +7,7 @@ This is a solution to the [Results summary component challenge on Frontend Mento
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
-  <!-- - [Links](#links) -->
+  - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
@@ -27,10 +27,10 @@ Users should be able to:
 ![Screenshot from the Desktop component](./screenshots/screenshotDesktop.png)
 ![Screenshot from the Mobile component](./screenshots/screenshotMobile.png)
 
-<!-- ### Links
+### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com) -->
+- [Solution URL:](https://www.frontendmentor.io/solutions/result-summary-component-using-jquery-and-sass--e6Tn-ada7)
+- [Live Site URL:](https://frontend-mentor-results-summary-component-main.vercel.app/)
 
 ## My process
 

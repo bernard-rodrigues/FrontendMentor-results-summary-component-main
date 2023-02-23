@@ -171,7 +171,8 @@ footer a {
   body #container {
     position: absolute;
     left: 50%;
-    transform: translate(-50%, 218px);
+    top: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     width: 737px;
     height: 512px;

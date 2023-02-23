@@ -1,4 +1,4 @@
-fetch('../public/data.json')
+fetch('../data/data.json')
     .then(response => response.json())
     .then(data => {
         $('#reaction-container img').attr('src', data[0].icon);

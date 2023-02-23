@@ -24,8 +24,8 @@ Users should be able to:
 
 ### Screenshot
 
-![Screenshot from the Desktop component](./public/screenshotDesktop.png)
-![Screenshot from the Mobile component](./public/screenshotMobile.png)
+![Screenshot from the Desktop component](./screenshots/screenshotDesktop.png)
+![Screenshot from the Mobile component](./screenshots/screenshotMobile.png)
 
 <!-- ### Links
 
